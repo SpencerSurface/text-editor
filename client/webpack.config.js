@@ -22,7 +22,6 @@ module.exports = () => {
         swDest: "src-sw.js"
       }),
 
-      // 225ca3
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
@@ -51,6 +50,7 @@ module.exports = () => {
         },
         {
           test: /\.m?js$/,
+          exclude: /node_modules/,
           use: {
             loader: "babel-loader",
             options: {
